@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="dob" type="date" name="">
+  <button type="submit" id="age_btn">Find Age</button>
+  <div id="main"></div>
+
+  <script>
+    const date = document.getElementById("dob")
+    const age_btn = document.getElementById("age_btn")
+
+    age_btn.addEventListener("click", (e) => {
+      e.preventDefault()
+      if (date.value) {
+        const current_year = new Date()
+
+        const dob = new Date(date.value) // here we will convert our input data in date format
+
+        const current_age = current_year.getFullYear() - dob.getFullYear()
+        console.log(current_age)
+        const heading = document.createElement("h1")
+        heading.textContent = `hello my age is ${current_age} year`
+        main.append(heading)
+      }
+
+
+
+
+    })
+
+  </script>
+
+
+</body>
+
+</html>
